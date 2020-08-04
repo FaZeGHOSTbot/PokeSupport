@@ -1032,13 +1032,13 @@ var msg1 = Array(3);
           return message.channel.send('I need a text channel named `mod-log` to print my mutes logs in, please create one')
       }
 
-      if(!userMute){
+      if(!mutedperson){
         try {
           // Check if a valid userID has been entered instead of a Discord user mention
           if (!message.guild.members.cache.get(args.slice(1, 2).join(' '))) throw new Error('Couldn\'t get a Discord user with this userID!');
           // If the client (bot) can get a user with this userID, it overwrites the current user variable to the user object that the client fetched
-          userMute = message.guild.members.cache.get(args.slice(1, 2).join(' '));
-          userMute = userMute.user;
+         mutedperson = message.guild.members.cache.get(args.slice(1, 2).join(' '));
+          mutedperson = mutedperson.user;
           } catch (error) {
           return message.reply('Couldn\'t get a Discord user with this userID!');
           }
@@ -1048,7 +1048,7 @@ var msg1 = Array(3);
         return message.channel.send('You can just not send messages instead of mutting yourself :wink:')
     }
 
-    if (userMute.guild.roles.cache.find(r => r.name === "PokéMuted")){
+    if (mutedperson.roles.cache.find(r => r.name === "PokéMuted")){
              return message.channel.send("User is already Muted.")
     }
          if(!muterole){
@@ -1064,10 +1064,10 @@ var msg1 = Array(3);
              return message.channel.send("You need to provide a reason for the mute")
            }
 
-           userMute.roles.remove(mainrole.id);
-           userMute.roles.add(muterole.id);
+           mutedperson.roles.remove(mainrole.id);
+           mutedperson.roles.add(muterole.id);
           let muteEmbed = new Discord.MessageEmbed()
-          .setDescription(`\`${userMute.username}\` has been muted for \`${ms(ms(mttime))}\` REASON: \`${muteReason}\`!`)
+          .setDescription(`User has been muted for \`${ms(ms(mttime))}\` REASON: \`${muteReason}\`!`)
           .setColor(0x4177CB)
           .setFooter()
           .setTimestamp()
