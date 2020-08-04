@@ -1107,7 +1107,7 @@ var msg1 = Array(3);
           mutedperson.roles.remove(mainrole.id);
           mutedperson.roles.add(muterole.id);
 
-          message.channel.send(`\`${userMute.username}\` has been muted for \`${ms(ms(mttime))}\` REASON: \`${muteReason}\`!`)
+          message.channel.send(`User has been muted for \`${ms(ms(mttime))}\` REASON: \`${muteReason}\`!`)
           setTimeout(() => {
             mutedperson.roles.add(mainrole.id);
             mutedperson.roles.remove(muterole.id);
