@@ -1048,7 +1048,7 @@ var msg1 = Array(3);
         return message.channel.send('You can just not send messages instead of mutting yourself :wink:')
     }
 
-    if (userMute.guild.roles.cache.find(r => r.name === "PokeMuted")){
+    if (userMute.message.guild.roles.cache.find(r => r.name === "PokeMuted")){
              return message.channel.send("User is already Muted.")
     }
          if(!muterole){
