@@ -944,7 +944,7 @@ var msg1 = Array(3);
           if(!unmutedperson) return message.channel.send("User not found!");
 
           let unmainrole = message.guild.roles.cache.find(role => role.name === "Trainer");
-          let unmuterole = message.guild.roles.cache.find(role => role.name === "PokeMuted");
+          let unmuterole = message.guild.roles.cache.find(role => role.name === "PokéMuted");
 
           if (!message.guild.member(message.author).hasPermission('MUTE_MEMBERS')) {
             return message.channel.send(':lock: **You** need `MUTE_MEMBERS` Permissions to execute `mute`')
@@ -979,7 +979,7 @@ var msg1 = Array(3);
       if (userunMute.roles.cache.find(r => r.name === "Trainer")){
                return message.channel.send("User is already Unmuted.")
       }
-      if (userUnmute.roles.cache.find(r => r.name === "PokeMuted")){
+      if (userUnmute.roles.cache.find(r => r.name === "PokéMuted")){
         
         userunMute.roles.add(unmainrole.id);
         userunMute.roles.remove(unmuterole.id);
@@ -1015,7 +1015,7 @@ var msg1 = Array(3);
          if(!mutedperson) return message.channel.send("User not found!");
 
          let mainrole = message.guild.roles.cache.find(role => role.name === "Trainer");
-         let muterole = message.guild.roles.cache.find(role => role.name === "PokeMuted");
+         let muterole = message.guild.roles.cache.find(role => role.name === "PokéMuted");
          let mttime = args[2];
 
          if (!message.guild.member(message.author).hasPermission('MUTE_MEMBERS')) {
@@ -1048,11 +1048,11 @@ var msg1 = Array(3);
         return message.channel.send('You can just not send messages instead of mutting yourself :wink:')
     }
 
-    if (userMute.message.guild.roles.cache.find(r => r.name === "PokeMuted")){
+    if (userMute.guild.roles.cache.find(r => r.name === "PokéMuted")){
              return message.channel.send("User is already Muted.")
     }
          if(!muterole){
-           message.guild.roles.create({name:"PokeMuted", color: "#FFOOOO", permissions:["VIEW_CHANNEL"]});
+           message.guild.roles.create({name:"PokéMuted", color: "#FFOOOO", permissions:["VIEW_CHANNEL"]});
 
           
 
