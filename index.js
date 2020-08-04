@@ -1856,7 +1856,7 @@ break;
                   message.channel.send(dogpicembed);
                   break;
 
-                case "say":
+                /*case "say":
        
         const botsay = message.content.split(' ').slice(1).join(' ');
 
@@ -1864,7 +1864,7 @@ break;
 
             message.delete();
             message.channel.send(botsay);
-        break;
+        break;*/
 
         case "serverinfo":
 
