@@ -1,0 +1,42 @@
+{
+  "name": "PokeSupport",
+  "version": "1.0.0",
+  "description": "Support Bot for PokeHunt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LucifeR",
+  "license": "ISC",
+  "dependencies": {
+    "booru": "^2.3.2",
+    "discord-giveaways": "^4.2.1",
+    "discord.js": "^12.2.0",
+    "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
+    "dotenv": "^8.2.0",
+    "dotenv-flow": "^3.2.0",
+    "enmap": "^5.4.1",
+    "humanize-duration": "^3.23.1",
+    "jimp": "^0.14.0",
+    "mal-scraper": "^2.7.1",
+    "map": "^1.0.1",
+    "math-expression-evaluator": "^1.2.22",
+    "moment": "^2.27.0",
+    "moment-duration-format": "^2.3.2",
+    "mongoose": "^5.9.26",
+    "ms": "^2.1.2",
+    "mysql2": "^2.1.0",
+    "nekos.life": "^2.0.7",
+    "node-fetch": "^2.6.0",
+    "node-gyp": "^7.0.0",
+    "random-puppy": "^1.1.0",
+    "regex": "^0.1.1",
+    "request-promise-native": "^1.0.9",
+    "sequelize": "^6.3.4",
+    "snekfetch": "^4.0.4",
+    "spongeuscator": "^0.1.3",
+    "superagent": "^5.3.1",
+    "urban.js": "^2.4.3",
+    "yarn": "^1.22.4"
+  }
+}
