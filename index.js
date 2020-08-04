@@ -1035,12 +1035,12 @@ var msg1 = Array(3);
       if(!userMute){
         try {
           // Check if a valid userID has been entered instead of a Discord user mention
-          if (!message.guild.members.cache.get(args.slice(1, 2).join(' '))) throw new Error('Couldn\' get a Discord user with this userID!');
+          if (!message.guild.members.cache.get(args.slice(1, 2).join(' '))) throw new Error('Couldn\'t get a Discord user with this userID!');
           // If the client (bot) can get a user with this userID, it overwrites the current user variable to the user object that the client fetched
           userMute = message.guild.members.cache.get(args.slice(1, 2).join(' '));
           userMute = userMute.user;
           } catch (error) {
-          return message.reply('Couldn\' get a Discord user with this userID!');
+          return message.reply('Couldn\'t get a Discord user with this userID!');
           }
       }
 
