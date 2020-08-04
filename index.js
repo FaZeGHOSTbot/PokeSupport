@@ -149,6 +149,7 @@ if(message.content.toLowerCase() === 'ps!createticket' && message.channel.id ===
       message.author.send("You already have a ticket!");
   } 
   else {
+    message.delete()
       let guild = message.guild;
       /**
        * Create the channel, pass in params.
@@ -178,8 +179,8 @@ if(message.content.toLowerCase() === 'ps!createticket' && message.channel.id ===
   }
 }
 else if(message.content.toLowerCase() === 'ps!closeticket') { // Closing the ticket.
-  if(userTickets.has(message.author.id)) { // Check if the user has a ticket by checking if the map has their ID as a key.
-      if(message.channel.id === userTickets.get(message.author.id)) {
+  if((userTickets.has(message.author.id)) || message.member.roles.cache.some((r) => r.name === "STAFF")) { // Check if the user has a ticket by checking if the map has their ID as a key.
+      if(message.channel.id === userTickets.get(message.author.id))  {
         let TicketClosemodlog = message.guild.channels.cache.get('740174369040367627');
 
         TicketClosemodlog.send({embed: {
@@ -200,13 +201,15 @@ else if(message.content.toLowerCase() === 'ps!closeticket') { // Closing the tic
           }
         }
       });
-
-          message.channel.delete('closing ticket') // Delete the ticket.
+ message.channel.send("Deleting Channel in 5 seconds.")
+      setTimeout(() => {  
+        message.channel.delete('closing ticket') // Delete the ticket.
           .then(channel => {
               console.log("Deleted " + channel.name);
               userTickets.delete(message.author.id);
           })
           .catch(err => console.log(err));
+        }, ms(5000));
       }
   }
   /** 
@@ -273,7 +276,7 @@ else if(message.content.toLowerCase() === 'ps!closeticket') { // Closing the tic
               },
               {
                 name: "🎉 Fun",
-                value: 'meme, rps, ratewaifu, 8ball, advice, anime, dick, roll, urban, animesearch, notice, coinflip, quote, baka, dog, say'
+                value: 'meme, rps, ratewaifu, 8ball, advice, anime, dick, roll, urban, animesearch, notice, coinflip, quote, baka, dog'
               },
               {
                 name: "🎞 Gif",
