@@ -1085,7 +1085,7 @@ var msg1 = Array(3);
             },
             fields: [{
                 name: "Mute:",
-                value: `**Muted:** ${userMute.username}#${userMute.discriminator}\n**Moderator:** ${message.author.username} \n**Duration:** ${ms(ms(mttime), {long: true})} \n**Reason:** ${muteReason}`
+                value: `**Muted:** ${mutedperson.tag}\n**Moderator:** ${message.author.username} \n**Duration:** ${ms(ms(mttime), {long: true})} \n**Reason:** ${muteReason}`
               }
             ],
             timestamp: new Date(),
@@ -1121,7 +1121,7 @@ var msg1 = Array(3);
             },
             fields: [{
                 name: "Mute:",
-                value: `**Muted:** ${userMute.username}#${userMute.discriminator}\n**Moderator:** ${message.author.username} \n**Duration:** ${ms(ms(mttime), {long: true})} \n**Reason:** ${muteReason}`
+                value: `**Muted:** ${mutedperson.tag}\n**Moderator:** ${message.author.username} \n**Duration:** ${ms(ms(mttime), {long: true})} \n**Reason:** ${muteReason}`
               }
             ],
             timestamp: new Date(),
